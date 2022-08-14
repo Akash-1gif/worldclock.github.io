@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+    <script>
+      let d;
+      let text;
+      let date_;
+      let obj1={timeStyle:"full",houtCycle:"h24",timeZone:null};
+      let obj2={dateStyle:"full",timeZone:null};
+      let g;
+      let h;
+      function fun2(){
+          let f=document.getElementById("city");
+          delete (obj1.timeZone);
+          delete (obj2.timeZone);
+          g=f.value;
+          h=f.value;
+          obj1['timeZone']=g;
+          obj2['timeZone']=g;
+          
+          // alert(obj1['timeZone']);
+          document.getElementById("display_city").innerHTML="<br>";
+          document.getElementById("display_here").innerHTML="<br>";
+          setInterval(()=>{
+              d=new Date();
+              text=d.toLocaleTimeString("en-US",obj1);
+              date_=d.toLocaleDateString("en-US",obj2);
+              document.getElementById("display_city").innerHTML=h;
+              document.getElementById("display_here").innerHTML=text+"<br>"+date_;
+          },1000);
+  
+      }
+    </script>
+    <!-- navbar  -->
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">World Clock</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Check Time</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">About product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">About developer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+      <h2>Select time:</h2>
+      <div class="form-floating">
+        <select class="form-select" id="city" aria-label="Floating label select example">
+          <option value="Africa/Abidjan">Africa/Abidjan</option>
+          <option value="Africa/Addis_Ababa">Africa/Addis_Ababa</option>
+          <option value="Africa/Algiers">Africa/Algiers</option>
+          <option value="Africa/Blantyre">Africa/Blantyre</option>
+          <option value="Africa/Cairo">Africa/Cairo</option>
+          <option value="Africa/Dar_es_Salaam">Africa/Dar_es_Salaam</option>
+          <option value="Africa/Harare">Africa/Harare</option>
+          <option value="Africa/Johannesburg">Africa/Johannesburg</option>
+          <option value="Africa/Kigali">Africa/Kigali</option>
+          <option value="Africa/Lagos">Africa/Lagos</option>
+          <option value="Africa/Nairobi">Africa/Nairobi</option>
+          <option value="Africa/Porto-Novo">Africa/Porto-Novo</option>
+          <option value="Africa/Tripoli">Africa/Tripoli</option>
+          <option value="America/Anchorage">America/Anchorage</option>
+          <option value="America/Antigua">America/Antigua</option>
+          <option value="America/Argentina/Buenos_Aires">America/Argentina/Buenos_Aires</option>
+          <option value="America/Atka">America/Atka</option>
+          <option value="America/Barbados">America/Barbados</option>
+          <option value="America/Chicago">America/Chicago</option>
+          <option value="America/Denver">America/Denver</option>
+          <option value="America/Detroit">America/Detroit</option>
+          <option value="America/Dominica">America/Dominica</option>
+          <option value="America/El_Salvador">America/El_Salvador</option>
+          <option value="America/Guyana">America/Guyana</option>
+          <option value="America/Havana">America/Havana</option>
+          <option value="America/Indiana/Indianapolis">America/Indiana/Indianapolis</option>
+          <option value="America/Jamaica">America/Jamaica</option>
+          <option value="America/Kentucky/Louisville">America/Kentucky/Louisville</option>
+          <option value="America/Los_Angeles">America/Los_Angeles</option>
+          <option value="America/Mexico_City">America/Mexico_City</option>
+          <option value="America/Montreal">America/Montreal</option>
+          <option value="America/New_York">America/New_York</option>
+          <option value="America/Panama">America/Panama</option>
+          <option value="America/Puerto_Rico">America/Puerto_Rico</option>
+          <option value="America/Rio_Branco">America/Rio_Branco</option>
+          <option value="America/Santiago">America/Santiago</option>
+          <option value="America/Santo_Domingo">America/Santo_Domingo</option>
+          <option value="America/Sao_Paulo">America/Sao_Paulo</option>
+          <option value="America/Toronto">America/Toronto</option>
+          <option value="Antarctica/Macquarie">Antarctica/Macquarie</option>
+          <option value="Antarctica/Mawson">Antarctica/Mawson</option>
+          <option value="Antarctica/Vostok">Antarctica/Vostok</option>
+          <option value="Asia/Aden">Asia/Aden</option>
+          <option value="Asia/Baghdad">Asia/Baghdad</option>
+          <option value="Asia/Bahrain">Asia/Bahrain</option>
+          <option value="Asia/Baku">Asia/Baku</option>
+          <option value="Asia/Bangkok">Asia/Bangkok</option>
+          <option value="Asia/Beirut">Asia/Beirut</option>
+          <option value="Asia/Brunei">Asia/Brunei</option>
+          <option value="Asia/Calcutta">Asia/Calcutta</option>
+          <option value="Asia/Chungking">Asia/Chungking</option>
+          <option value="Asia/Colombo">Asia/Colombo</option>
+          <option value="Asia/Damascus">Asia/Damascus</option>
+          <option value="Asia/Dhaka">Asia/Dhaka</option>
+          <option value="Asia/Dubai">Asia/Dubai</option>
+          <option value="Asia/Hebron">Asia/Hebron</option>
+          <option value="Asia/Ho_Chi_Minh">Asia/Ho_Chi_Minh</option>
+          <option value="Asia/Hong_Kong">Asia/Hong_Kong</option>
+          <option value="Asia/Istanbul">Asia/Istanbul</option>
+          <option value="Asia/Jakarta">Asia/Jakarta</option>
+          <option value="Asia/Jerusalem">Asia/Jerusalem</option>
+          <option value="Asia/Kabul">Asia/Kabul</option>
+          <option value="Asia/Karachi">Asia/Karachi</option>
+          <option value="Asia/Kathmandu">Asia/Kathmandu</option>
+          <option value="Asia/Kuala_Lumpur">Asia/Kuala_Lumpur</option>
+          <option value="Asia/Kuwait">Asia/Kuwait</option>
+          <option value="Asia/Macau">Asia/Macau</option>
+          <option value="Asia/Manila">Asia/Manila</option>
+          <option value="Asia/Muscat">Asia/Muscat</option>
+          <option value="Asia/Novosibirsk">Asia/Novosibirsk</option>
+          <option value="Asia/Pyongyang">Asia/Pyongyang</option>
+          <option value="Asia/Qatar">Asia/Qatar</option>
+          <option value="Asia/Rangoon">Asia/Rangoon</option>
+          <option value="Asia/Riyadh">Asia/Riyadh</option>
+          <option value="Asia/Seoul">Asia/Seoul</option>
+          <option value="Asia/Shanghai">Asia/Shanghai</option>
+          <option value="Asia/Singapore">Asia/Singapore</option>
+          <option value="Asia/Taipei">Asia/Taipei</option>
+          <option value="Asia/Tashkent">Asia/Tashkent</option>
+          <option value="Asia/Tbilisi">Asia/Tbilisi</option>
+          <option value="Asia/Tehran">Asia/Tehran</option>
+          <option value="Asia/Thimphu">Asia/Thimphu</option>
+          <option value="Asia/Tokyo">Asia/Tokyo</option>
+          <option value="Asia/Vladivostok">Asia/Vladivostok</option>
+          <option value="Atlantic/Bermuda">Atlantic/Bermuda</option>
+          <option value="Atlantic/Canary">Atlantic/Canary</option>
+          <option value="Atlantic/Reykjavik">Atlantic/Reykjavik</option>
+          <option value="Atlantic/South_Georgia">Atlantic/South_Georgia</option>
+          <option value="Australia/Adelaide">Australia/Adelaide</option>
+          <option value="Australia/Brisbane">Australia/Brisbane</option>
+          <option value="Australia/Canberra">Australia/Canberra</option>
+          <option value="Australia/Hobart">Australia/Hobart</option>
+          <option value="Australia/NSW">Australia/NSW</option>
+          <option value="Australia/Perth">Australia/Perth</option>
+          <option value="Australia/Sydney">Australia/Sydney</option>
+          <option value="Canada/Newfoundland">Canada/Newfoundland</option>
+          <option value="Canada/Yukon">Canada/Yukon</option>
+          <option value="Chile/Continental">Chile/Continental</option>
+          <option value="Cuba">Cuba</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Etc/Greenwich">Etc/Greenwich</option>
+          <option value="Europe/Amsterdam">Europe/Amsterdam</option>
+          <option value="Europe/Athens">Europe/Athens</option>
+          <option value="Europe/Belfast">Europe/Belfast</option>
+          <option value="Europe/Berlin">Europe/Berlin</option>
+          <option value="Europe/Brussels">Europe/Brussels</option>
+          <option value="Europe/Budapest">Europe/Budapest</option>
+          <option value="Europe/Copenhagen">Europe/Copenhagen</option>
+          <option value="Europe/Dublin">Europe/Dublin</option>
+          <option value="Europe/Helsinki">Europe/Helsinki</option>
+          <option value="Europe/Kiev">Europe/Kiev</option>
+          <option value="Europe/Lisbon">Europe/Lisbon</option>
+          <option value="Europe/London">Europe/London</option>
+          <option value="Europe/Luxembourg">Europe/Luxembourg</option>
+          <option value="Europe/Madrid">Europe/Madrid</option>
+          <option value="Europe/Monaco">Europe/Monaco</option>
+          <option value="Europe/Moscow">Europe/Moscow</option>
+          <option value="Europe/Oslo">Europe/Oslo</option>
+          <option value="Europe/Paris">Europe/Paris</option>
+          <option value="Europe/Prague">Europe/Prague</option>
+          <option value="Europe/Rome">Europe/Rome</option>
+          <option value="Europe/Stockholm">Europe/Stockholm</option>
+          <option value="Europe/Vatican">Europe/Vatican</option>
+          <option value="Europe/Vienna">Europe/Vienna</option>
+          <option value="Europe/Warsaw">Europe/Warsaw</option>
+          <option value="Europe/Zurich">Europe/Zurich</option>
+          <option value="Indian/Maldives">Indian/Maldives</option>
+          <option value="Indian/Mauritius">Indian/Mauritius</option>
+          <option value="Pacific/Auckland">Pacific/Auckland</option>
+          <option value="Pacific/Fiji">Pacific/Fiji</option>
+          <option value="Pacific/Norfolk">Pacific/Norfolk</option>
+          <option value="Turkey">Turkey</option>
+          
+          
+        </select>
+        <label for="floatingSelect">Works with selects</label>
+      </div>
+      <input class="button bg-danger my-4" type="submit" value="Check time" onclick="fun2()">
+    </div>
+    <!-- time is displayed here  -->
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold" id="display_city">No City selected</h1>
+          <p class="col-md-8 fs-4" id="display_here">No Time</p>
+        </div>
+    </div>
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
